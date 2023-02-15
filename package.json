@@ -1,0 +1,31 @@
+{
+  "name": "mall",
+  "version": "1.0.0",
+  "description": "Open-sourced Shopify Store 2.0 Starter theme with Tailwind CSS and Alpinejs.",
+  "main": "tailwind.config.js",
+  "dependencies": {
+    "alpinejs": "^3.8.1",
+    "laravel-mix": "^6.0.41",
+    "prettier": "^2.5.1",
+    "prettier-plugin-tailwindcss": "^0.1.5",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.49.7",
+    "sass-loader": "^12.4.0",
+    "tailwindcss": "^3.0.18"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tylerlee2/mall.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tylerlee2/mall/issues"
+  },
+  "homepage": "https://github.com/Tylerlee2/mall#readme"
+}
