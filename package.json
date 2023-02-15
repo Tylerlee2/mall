@@ -1,7 +1,7 @@
 {
-  "name": "shopify-sunrise",
+  "name": "mall",
   "version": "1.0.0",
-  "description": "Open-sourced Shopify Store 2.0 Starter theme with Tailwind CSS and Alpinejs. This repo is based on YouTube Course for Shopify Theme development for Store 2.0.",
+  "description": "Open-sourced Shopify Store 2.0 Starter theme with Tailwind CSS and Alpinejs.",
   "main": "tailwind.config.js",
   "dependencies": {
     "alpinejs": "^3.8.1",
@@ -19,13 +19,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hujjat/shopify-sunrise.git"
+    "url": "git+https://github.com/Tylerlee2/mall.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Hujjat/shopify-sunrise/issues"
+    "url": "https://github.com/Tylerlee2/mall/issues"
   },
-  "homepage": "https://github.com/Hujjat/shopify-sunrise#readme"
+  "homepage": "https://github.com/Tylerlee2/mall#readme"
 }
