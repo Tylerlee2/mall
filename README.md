@@ -1,4 +1,4 @@
-# Mall
+# Shopify Mall
 
 Open-sourced Shopify Store 2.0 Starter theme with Tailwind CSS and Alpinejs. 
 
