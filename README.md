@@ -5,7 +5,7 @@ Open-sourced Shopify Store 2.0 Starter theme with Tailwind CSS and Alpinejs.
 ## How to use
 * Clone the repo
 * Install npm packages `npm install`
-* You're done. Start customizing the theme`shopify theme dev`.
+* You're done. Start customizing the theme `shopify theme dev`.
 
 ## Available commands
 * run `theme watch` for any changes to theme files
