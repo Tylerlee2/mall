@@ -3591,7 +3591,7 @@ window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].plugin(_alpinejs_persist__WEBPACK_IMPORTED_MODULE_1__["default"]);
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].data('Slider', _Slider_js__WEBPACK_IMPORTED_MODULE_2__["default"]);
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
-var Sunrise = {
+var Mall = {
   updateQuantity: function updateQuantity(line, qty) {
     fetch('/cart/change.js', {
       method: 'POST',
@@ -3612,7 +3612,7 @@ var Sunrise = {
     });
   }
 };
-window.Sunrise = Sunrise;
+window.Mall = Mall;
 
 /***/ }),
 
