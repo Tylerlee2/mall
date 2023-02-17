@@ -39,6 +39,15 @@ function src_default(Alpine) {
   };
   Object.defineProperty(Alpine, "$persist", {get: () => persist()});
   Alpine.magic("persist", persist);
+  Alpine.persist = (key, {get, set}, storage = localStorage) => {
+    let initial = storageHas(key, storage) ? storageGet(key, storage) : get();
+    set(initial);
+    Alpine.effect(() => {
+      let value = get();
+      storageSet(key, value, storage);
+      set(value);
+    });
+  };
 }
 function storageHas(key, storage) {
   return storage.getItem(key) !== null;
@@ -3770,7 +3779,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkshopify_sunrise"] = self["webpackChunkshopify_sunrise"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunkmall"] = self["webpackChunkmall"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
