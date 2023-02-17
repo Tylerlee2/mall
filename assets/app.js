@@ -39,6 +39,15 @@ function src_default(Alpine) {
   };
   Object.defineProperty(Alpine, "$persist", {get: () => persist()});
   Alpine.magic("persist", persist);
+  Alpine.persist = (key, {get, set}, storage = localStorage) => {
+    let initial = storageHas(key, storage) ? storageGet(key, storage) : get();
+    set(initial);
+    Alpine.effect(() => {
+      let value = get();
+      storageSet(key, value, storage);
+      set(value);
+    });
+  };
 }
 function storageHas(key, storage) {
   return storage.getItem(key) !== null;
@@ -3582,7 +3591,7 @@ window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].plugin(_alpinejs_persist__WEBPACK_IMPORTED_MODULE_1__["default"]);
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].data('Slider', _Slider_js__WEBPACK_IMPORTED_MODULE_2__["default"]);
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
-var Sunrise = {
+var Mall = {
   updateQuantity: function updateQuantity(line, qty) {
     fetch('/cart/change.js', {
       method: 'POST',
@@ -3603,7 +3612,7 @@ var Sunrise = {
     });
   }
 };
-window.Sunrise = Sunrise;
+window.Mall = Mall;
 
 /***/ }),
 
@@ -3770,7 +3779,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkshopify_sunrise"] = self["webpackChunkshopify_sunrise"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunkmall"] = self["webpackChunkmall"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();

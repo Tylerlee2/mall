@@ -8,7 +8,7 @@ Alpine.data('Slider', Slider)
 
 Alpine.start()
 
-let Sunrise = {
+let Mall = {
     updateQuantity(line, qty){
          fetch('/cart/change.js', {
             method: 'POST', 
@@ -26,4 +26,4 @@ let Sunrise = {
     }
 }
 
-window.Sunrise = Sunrise
+window.Mall = Mall

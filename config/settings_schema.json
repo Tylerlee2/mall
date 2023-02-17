@@ -1,11 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Sunrise",
-    "theme_version": "1.0",
-    "theme_author": "Codeinspire",
-    "theme_documentation_url": "https:\/\/codeinspire.io\/",
-    "theme_support_url": "https:\/\/codeinspire.io\/#services"
+    "theme_name": "Mall",
+    "theme_version": "1.0.0",
+    "theme_author": "Tyler",
+    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
+    "theme_support_url": "https:\/\/support.shopify.com\/"
   },
   {
     "name": "t:settings_schema.colors.name",
