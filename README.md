@@ -1,19 +1,17 @@
 # Shopify Mall
 
-Open-sourced Shopify Store 2.0 Starter theme with Tailwind CSS and Alpinejs. 
+Open-sourced Shopify Store 2.0 Starter theme with Tailwind CSS and Alpinejs.
 
 ## How to use
 * Clone the repo
 * Install npm packages `npm install`
-* Add your shop details in `config.yml` file
-* You're done. Start customizing the theme. 
+* You're done. Start customizing the theme`shopify theme dev`.
 
 ## Available commands
 * run `theme watch` for any changes to theme files
 * run `npx mix watch` for watching and compiling scss and js files
 * `npx mix --production` will build the production bundles and compress files
-* `theme deploy` will deploy your changes. 
-
+* `theme deploy` will deploy your changes
 
 ## FAQ
 ### Can I sell the theme I build using this theme? 
