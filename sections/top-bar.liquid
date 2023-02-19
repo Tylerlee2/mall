@@ -1,0 +1,74 @@
+<div style="background-color: {{ section.settings.background_color }};">
+  <div class="max-w-screen-2xl flex {{ section.settings.justify_content }}">
+    {% for block in section.blocks %}
+      {{ block.settings.text }}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Top Bar",
+    "max_blocks": 3,
+    "settings": [
+      {
+        "id": "background_color",
+        "default": "#ffffff",
+        "label": "Background color",
+        "type": "color"
+      }, {
+        "id": "justify_content",
+        "default": "justify-end",
+        "label": "Alignment",
+        "type": "select",
+        "options": [
+          {
+            "value": "justify-start",
+            "label": "Left"
+          }, {
+            "value": "justify-end",
+            "label": "Right"
+          }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "type": "announcement",
+        "name": "Announcement",
+        "limit": 1,
+        "settings": [
+          {
+            "id": "text",
+            "label": "Text",
+            "type": "richtext"//???
+          }
+        ]
+      },
+      {
+        "type": "ship-to",
+        "name": "Ship to",
+        "limit": 1,
+        "settings": [
+          {
+            "id": "text",
+            "label": "Text",
+            "type": "richtext"//???
+          }
+        ]
+      },
+      {
+        "type": "language",
+        "name": "Language",
+        "limit": 1,
+        "settings": [
+          {
+            "id": "text",
+            "label": "Text",
+            "type": "richtext"//???
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
