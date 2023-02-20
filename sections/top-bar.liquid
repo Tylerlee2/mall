@@ -1,9 +1,9 @@
 <div style="background-color: {{ section.settings.background_color }};">
-  <div class="max-w-screen-2xl flex {{ section.settings.justify_content }}">
+  <section class="flex {{ section.settings.justify_content }}">
     {% for block in section.blocks %}
       {{ block.settings.text }}
     {% endfor %}
-  </div>
+  </section>
 </div>
 
 {% schema %}
