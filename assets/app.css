@@ -755,9 +755,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .max-w-\[200px\] {
   max-width: 200px;
 }
-.max-w-screen-2xl {
-  max-width: 1536px;
-}
 .max-w-full {
   max-width: 100%;
 }
@@ -971,10 +968,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .border {
   border-width: 1px;
-}
-.border-y {
-  border-top-width: 1px;
-  border-bottom-width: 1px;
 }
 .border-x {
   border-left-width: 1px;
@@ -1351,6 +1344,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+section {
+  max-width: var(--page-width);
+}
+
 .header {
   display: grid;
   grid-template-areas: "header-logo header-menu header-icons";
