@@ -1344,10 +1344,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-section {
-  max-width: var(--page-width);
-}
-
 .header {
   display: grid;
   grid-template-areas: "header-logo header-menu header-icons";
@@ -1372,6 +1368,12 @@ section {
 }
 .header .nav__item .nav__item-submenu {
   display: none;
+}
+
+section {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .page-width {
@@ -1701,6 +1703,10 @@ section {
 }
 
 @media (min-width: 1024px) {
+
+  .lg\:hidden {
+    display: none;
+  }
 
   .lg\:w-1\/2 {
     width: 50%;

@@ -83,7 +83,7 @@
   </head>
 
   <body class="gradient" style="margin: auto;">
-    <a class="skip-to-content-link button sr-only" href="#MainContent">
+    <a class="sr-only skip-to-content-link button" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
     {% section 'top-bar' %}
@@ -99,6 +99,10 @@
     </main>
 
     {% section 'footer' %}
+    <div class="lg:hidden">
+      {% section 'mobile-nav-bar' %}
+    </div>
+    
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>

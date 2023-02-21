@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-section {
-  max-width: var(--page-width);
-}
 // variables
 $btn-height: 44px;
 
@@ -40,6 +37,11 @@ $btn-height: 44px;
   }
 }
 
+section {
+  max-width: var(--page-width);
+  margin:0 auto;
+  padding: 0 1rem;
+}
 // Helpers
 .page-width {
   max-width: var(--page-width);
