@@ -1,20 +1,37 @@
 <div style="background-color: {{ section.settings.background_color }};">
-  <div class="container flex flex-col md:flex-row justify-center">
-    <div>logo</div>
-    <div class="flex-auto">
-      {% render 'search-input' %}
-    </div>
-    <div class="hidden md:flex">icon</div>
-    <div class="hidden md:flex">icon</div>
+  <div class="container hidden md:flex">
+    {% for link in section.settings.menu.links %}
+      {% if link.links != blank %}
+        <li class="relative block px-4 py-5 nav__item">
+          <a href="{{ link.url }}">{{ link.title }}</a>
+          <ul class="nav__item-submenu absolute bg-white border py-3 px-4 min-w-[160px] top-16 left-1/2 transform -translate-x-1/2">
+            {% for sublink in linklists[link.handle].links %}
+              <li>
+                <a class="block py-1 hover:opacity-75 " href="{{ sublink.url }}">
+                  {{ sublink.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% else %}
+        <li>
+          <a class="block px-4 py-5 nav__item" href="{{ link.url }}">
+            {{ link.title }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
   </div>
-  {% comment %} {% render 'search-input' %} {% endcomment %}
+
+
+
 </div>
 
 <script type="application/ld+json">
   {
   "@context": "http://schema.org",
-                                              "@type": "Organization",
-                                              "name": {{ shop.name | json }},
+                  "@type": "Organization",
+                  "name": {{ shop.name | json }},
   {% if section.settings.logo %}
     {% assign image_size = section.settings.logo.width %}
     "logo": {{ section.settings.logo | image_url: width: image_size | prepend: "https:" | json }},
@@ -35,18 +52,18 @@
 </script>
 
 {%- if request.page_type == 'index' -%}
-  {% assign potential_action_target = shop.url | append: routes.search_url | append: '?q={search_term_string}' %}
+  {% assign potential_action_target = shop.url | append: routes.search_url | append: "?q={search_term_string}" %}
   <script type="application/ld+json">
     {
     "@context": "http://schema.org",
-                                                                                          "@type": "WebSite",
-                                                                                          "name": {{ shop.name | json }},
+                                  "@type": "WebSite",
+                                  "name": {{ shop.name | json }},
     "potentialAction": {
-                                                                                            "@type": "SearchAction",
-                                                                                            "target": {{ potential_action_target | json }},
+                                    "@type": "SearchAction",
+                                    "target": {{ potential_action_target | json }},
     "query-input": "required name=search_term_string"
-                                                                                          },
-                                                                                          "url": {{ shop.url | append: page.url | json }}
+                                  },
+                                  "url": {{ shop.url | append: page.url | json }}
     }
   </script>
 {%- endif -%}
@@ -58,7 +75,7 @@
     "settings": [
       {
         "id": "background_color",
-        "default": "#dddddd",
+        "default": "#eeeeee",
         "label": "Background color",
         "type": "color"
       },
