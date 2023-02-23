@@ -10,6 +10,9 @@ module.exports = {
     './templates/customers/*.liquid',
   ],
   theme: {
+    container: {
+      center: true,//使容器在默认情况下居中
+    },
     extend: {},
   },
   plugins: [],
