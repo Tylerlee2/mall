@@ -1,9 +1,9 @@
-<div style="background-color: {{ section.settings.background_color }};">
-  <section class="flex {{ section.settings.justify_content }}">
+<div class="bg-brand">
+  <div class="container flex {{ section.settings.justify_content }}">
     {% for block in section.blocks %}
       {{ block.settings.text }}
     {% endfor %}
-  </section>
+  </div>
 </div>
 
 {% schema %}

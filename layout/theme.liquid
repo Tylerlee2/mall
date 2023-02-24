@@ -43,7 +43,7 @@
 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
-
+    {% comment %} shopify全局样式  {% endcomment %}
     {% render 'head-styles' %}
 
     <link rel="stylesheet" href="{{ 'app.css' | asset_url }}">
@@ -82,7 +82,8 @@
     </script>
   </head>
 
-  <body class="gradient" style="margin: auto;">
+  <body class="gradient">
+
     <a class="sr-only skip-to-content-link button" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
@@ -95,7 +96,6 @@
 
     <main
       id="MainContent"
-      class="content-for-layout focus-none"
       role="main"
       tabindex="-1">
       {{ content_for_layout }}

@@ -13,6 +13,10 @@ module.exports = {
     container: {
       center: true,//使容器在默认情况下居中
     },
+    colors: {
+      brand: '#F59E0B',
+      // ...
+    },
     extend: {},
   },
   plugins: [],

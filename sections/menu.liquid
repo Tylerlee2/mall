@@ -1,8 +1,9 @@
 <div style="background-color: {{ section.settings.background_color }};">
   <div class="container hidden md:flex">
     {% for link in section.settings.menu.links %}
+      {% comment %} 可能是有多级菜单 {% endcomment %}
       {% if link.links != blank %}
-        <li class="relative block px-4 py-5 nav__item">
+        <li class="">
           <a href="{{ link.url }}">{{ link.title }}</a>
           <ul class="nav__item-submenu absolute bg-white border py-3 px-4 min-w-[160px] top-16 left-1/2 transform -translate-x-1/2">
             {% for sublink in linklists[link.handle].links %}
@@ -14,17 +15,12 @@
             {% endfor %}
           </ul>
         </li>
+        {% comment %} 可能是有一级菜单 {% endcomment %}
       {% else %}
-        <li>
-          <a class="block px-4 py-5 nav__item" href="{{ link.url }}">
-            {{ link.title }}</a>
-        </li>
+        <a class="" href="{{ link.url }}"> {{ link.title }}</a>
       {% endif %}
     {% endfor %}
   </div>
-
-
-
 </div>
 
 <script type="application/ld+json">
@@ -52,7 +48,7 @@
 </script>
 
 {%- if request.page_type == 'index' -%}
-  {% assign potential_action_target = shop.url | append: routes.search_url | append: "?q={search_term_string}" %}
+  {% assign potential_action_target = shop.url | append: routes.search_url | append: '?q={search_term_string}' %}
   <script type="application/ld+json">
     {
     "@context": "http://schema.org",
@@ -69,78 +65,85 @@
 {%- endif -%}
 
 {% schema %}
-  {
-    "name": "t:sections.header.name",
-    "class": "section-header",
-    "settings": [
-      {
-        "id": "background_color",
-        "default": "#eeeeee",
-        "label": "Background color",
-        "type": "color"
-      },
-      {
-        "type": "image_picker",
-        "id": "logo",
-        "label": "t:sections.header.settings.logo.label"
-      },
-      {
-        "type": "range",
-        "id": "logo_width",
-        "min": 50,
-        "max": 250,
-        "step": 10,
-        "default": 100,
-        "unit": "t:sections.header.settings.logo_width.unit",
-        "label": "t:sections.header.settings.logo_width.label"
-      },
-      {
-        "type": "select",
-        "id": "logo_position",
-        "options": [
-          {
-            "value": "middle-left",
-            "label": "t:sections.header.settings.logo_position.options__1.label"
-          }, {
-            "value": "top-left",
-            "label": "t:sections.header.settings.logo_position.options__2.label"
-          }, {
-            "value": "top-center",
-            "label": "t:sections.header.settings.logo_position.options__3.label"
-          }
-        ],
-        "default": "middle-left",
-        "label": "t:sections.header.settings.logo_position.label",
-        "info": "t:sections.header.settings.logo_position.info"
-      }, {
-        "type": "link_list",
-        "id": "menu",
-        "default": "main-menu",
-        "label": "t:sections.header.settings.menu.label"
-      }, {
-        "type": "checkbox",
-        "id": "show_line_separator",
-        "default": true,
-        "label": "t:sections.header.settings.show_line_separator.label"
-      }, {
-        "type": "checkbox",
-        "id": "enable_sticky_header",
-        "default": true,
-        "label": "t:sections.header.settings.enable_sticky_header.label",
-        "info": "t:sections.header.settings.enable_sticky_header.info"
-      }, {
-        "type": "header",
-        "content": "t:sections.all.spacing"
-      }, {
-        "type": "range",
-        "id": "margin_bottom",
-        "min": 0,
-        "max": 100,
-        "step": 4,
-        "unit": "px",
-        "label": "t:sections.header.settings.margin_bottom.label",
-        "default": 0
-      }
-    ]
-  }
+{
+  "name": "t:sections.header.name",
+  "class": "section-header",
+  "settings": [
+    {
+      "id": "background_color",
+      "default": "#eeeeee",
+      "label": "Background color",
+      "type": "color"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "t:sections.header.settings.logo.label"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 250,
+      "step": 10,
+      "default": 100,
+      "unit": "t:sections.header.settings.logo_width.unit",
+      "label": "t:sections.header.settings.logo_width.label"
+    },
+    {
+      "type": "select",
+      "id": "logo_position",
+      "options": [
+        {
+          "value": "middle-left",
+          "label": "t:sections.header.settings.logo_position.options__1.label"
+        },
+        {
+          "value": "top-left",
+          "label": "t:sections.header.settings.logo_position.options__2.label"
+        },
+        {
+          "value": "top-center",
+          "label": "t:sections.header.settings.logo_position.options__3.label"
+        }
+      ],
+      "default": "middle-left",
+      "label": "t:sections.header.settings.logo_position.label",
+      "info": "t:sections.header.settings.logo_position.info"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "t:sections.header.settings.menu.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_line_separator",
+      "default": true,
+      "label": "t:sections.header.settings.show_line_separator.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_header",
+      "default": true,
+      "label": "t:sections.header.settings.enable_sticky_header.label",
+      "info": "t:sections.header.settings.enable_sticky_header.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.spacing"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.header.settings.margin_bottom.label",
+      "default": 0
+    }
+  ]
+}
 {% endschema %}

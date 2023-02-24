@@ -2,7 +2,7 @@
   "sections": {
     "image_banner": {
       "type": "image-banner",
-      "disabled": true,
+      "disabled": false,
       "blocks": {
         "heading": {
           "type": "heading",
