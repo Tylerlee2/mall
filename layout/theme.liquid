@@ -44,7 +44,7 @@
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
     {% comment %} shopify全局样式  {% endcomment %}
-    {% render 'head-styles' %}
+    {% render '--head-styles' %}
 
     <link rel="stylesheet" href="{{ 'app.css' | asset_url }}">
     <script src="{{ 'app.js' | asset_url }}"></script>

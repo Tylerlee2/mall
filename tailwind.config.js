@@ -14,7 +14,7 @@ module.exports = {
       center: true,//使容器在默认情况下居中
     },
     colors: {
-      brand: '#F59E0B',
+      brand: 'var(--bg-brand)',
       // ...
     },
     extend: {},

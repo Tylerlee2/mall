@@ -11,6 +11,12 @@
     "name": "t:settings_schema.colors.name",
     "settings": [
       {
+        "type": "color",
+        "id": "bg_brand",
+        "default": "#0000ff",
+        "label": "Brand"
+      },
+      {
         "type": "header",
         "content": "t:settings_schema.colors.settings.header__1.content"
       },
