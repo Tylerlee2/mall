@@ -1,9 +1,14 @@
-<div style="background-color: {{ section.settings.background_color }};">
-  <div class="container flex flex-col md:flex-row justify-center">
-    <div>logo</div>
-    <div class="flex-auto">{% render 'search-input' %}</div>
-    <div class="hidden md:flex">icon</div>
-    <div class="hidden md:flex">icon</div>
+<div class="py-2" style="background-color: {{ section.settings.background_color }};">
+  <div class="container flex  justify-center flex-col md:flex-row items-stretch md:items-center">
+    <div class="flex justify-center">
+      <div>logo</div>
+      {% comment %} <div>country</div> {% endcomment %}
+    </div>
+    <div class="flex-auto">{% render 'input-search' %}</div>
+    <div class="hidden md:flex">
+      {% render 'nav-user' %}
+      {% render 'nav-cart' %}
+    </div>
   </div>
 </div>
 
@@ -13,7 +18,7 @@
   "settings": [
     {
       "id": "background_color",
-      "default": "#dddddd",
+      "default": "#ffffff",
       "label": "Background color",
       "type": "color"
     },
