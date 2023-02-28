@@ -1,34 +1,18 @@
-<div>
-  <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
-  <div class="relative mt-1 rounded-md shadow-sm">
-    <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-      <span class="text-gray-500 sm:text-sm">$</span>
-    </div>
-    <input type="text" name="price" id="price" class="block w-full rounded-md border-gray-300 pl-7 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0.00">
-    <div class="absolute inset-y-0 right-0 flex items-center">
-      <label for="currency" class="sr-only">Currency</label>
-      <select id="currency" name="currency" class="h-full rounded-md border-transparent bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-        <option>USD</option>
-        <option>CAD</option>
-        <option>EUR</option>
-      </select>
-    </div>
+<form action="{{ routes.search_url }}" method="get" role="search" class="search">
+  <div class="field relative flex items-center">
+    <input
+      class="field__input w-full p-2 border"
+      type="search"
+      id="nav-search-input"
+      name="q"
+      value="{{ search.terms | escape }}"
+      placeholder="{{ 'general.search.search' | t }}"
+    >
+
+    <label class="field__label sr-only" for="nav-search-input">{{ 'general.search.search' | t }}</label>
+    <input name="options[prefix]" type="hidden" value="last">
+    <button type="button" class="search__button absolute right-0" aria-label="{{ 'general.search.search' | t }}">
+      {% render 'icon-search', class: 'w-10' %}
+    </button>
   </div>
-</div>
-{% comment %} <form action="{{ routes.search_url }}" method="get" role="search" class="search">
-    <div class="field relative flex items-center">
-      <input class="field__input w-full p-2 border"
-        type="search"
-        id="nav-search-input"
-        name="q"
-        value="{{ search.terms | escape }}"
-        placeholder="{{ 'general.search.search' | t }}">
-
-      <label class="field__label sr-only" for="nav-search-input">{{ 'general.search.search' | t }}</label>
-      <input name="options[prefix]" type="hidden" value="last">
-      <button type="button" class="search__button absolute right-0" aria-label="{{ 'general.search.search' | t }}">
-        {% render 'icon-search' class: 'w-10' %}
-      </button>
-
-    </div>
-  </form> {% endcomment %}
+</form>
